@@ -61,6 +61,8 @@
 .complete-eoc {
 	background-color: #F1690D; /* Orange */
 	vertical-align: middle !important;
+	margin: 0 auto !important;
+    display: block !important;
 }
 
 .complete-eoc:hover {
