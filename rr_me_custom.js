@@ -7,6 +7,29 @@
  * @since 2025-11-25
  */
 
+/*  
+*	appendStylesheet
+*	Will take the url for a stylesheet hosted externally and append it to the document head.  Used to add Ontrak styles to myEvolv UI.
+*	DRC 06/12/2025
+*
+*	Parameters:
+*		url : the url to the stylesheet that you wish to append.
+*		
+*	Usage:  On the myEvolv form where you have elements that you want to apply a new stylesheet to, include the following code in the Before Load code section of the form header
+*			appendStylesheet('path/to/your/stylesheet.css');
+*
+*/	
+function appendStylesheet(url){
+	const link = document.createElement('link');
+	
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = url;
+	
+	document.head.appendChild(link);
+	
+}
+
 
 function CreateFormLine(column, value, udf, el, typeCode) {
     var formLine = {};
