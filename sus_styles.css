@@ -56,13 +56,14 @@
 	border-left: 20px solid #999999  !important;
 }
 
-
+.eoc {
+	margin: 0 auto !important;
+    display: block !important;
+	vertical-align: middle !important;
+}
 
 .complete-eoc {
 	background-color: #F1690D; /* Orange */
-	vertical-align: middle !important;
-	margin: 0 auto !important;
-    display: block !important;
 }
 
 .complete-eoc:hover {
