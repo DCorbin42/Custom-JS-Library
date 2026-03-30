@@ -55,3 +55,18 @@
 .chevron.phase-future:before {
 	border-left: 20px solid #999999  !important;
 }
+
+
+
+.complete-eoc {
+	background-color: #F1690D; /* Orange */
+	vertical-align: middle !important;
+}
+
+.complete-eoc:hover {
+	background-color: #F89B40 !important; /* Orange */
+}
+
+.complete-eoc:active {
+	background-color: #B93508 !important; /* Orange */
+}
