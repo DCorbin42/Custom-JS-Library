@@ -228,9 +228,11 @@ function click2Complete(event){
 	sessionStorage.setItem("belongs_to_event", belongs2Event);	
 
 	var processingProgram = 'Form.aspx';
+	var programInfo = null;
 	var isServicePlan = $(this).data('is-service-plan');
 	if(isServicePlan){
-		processingProgram = 'ServicePlanForm.aspx'
+		processingProgram = 'ServicePlanForm.aspx';
+		programInfo = $(this).data('program-info-id');
 	}
 	
 	var properties = {windowName: winTitle};
@@ -238,13 +240,14 @@ function click2Complete(event){
 		'parent_value': parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
 		'mode': 'ADD',
 		'unit_id': null,
-		'key_value': events2Do,
+		'key_value': 'new',
 		'events2do_id': events2Do,
 		'event_id': eventDefinition,
 		'event_definition_id': eventDefinition,
 		'form_header_id': formHeader,
 		'service_track': serviceTrack,  //This value is coming from the origin form
 		'module_code': 'CLIENTS',
+		'program_info_id': programInfo,
 		'belongs2event': belongs2Event,
 		'unit': null,
 		'rp': null,
