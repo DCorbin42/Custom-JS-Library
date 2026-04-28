@@ -91,6 +91,14 @@ function click2Open(event){
 	
 	//Optional HTML Data Attributes
 	var belongs2Event = $(this).data('belongs2event-id');
+
+	var processingProgram = 'Form.aspx';
+	var programInfo = null;
+	var isServicePlan = $(this).data('is-service-plan');
+	if(isServicePlan){
+		processingProgram = 'ServicePlanForm.aspx';
+		programInfo = $(this).data('program-info-id');
+	}
 	
 	//is_edit_allowed Logic
 	var isEditAllowed = false;
@@ -99,15 +107,17 @@ function click2Open(event){
 	}
 	
 	var properties = {windowName: winTitle};
-	var url = buildUrl('Form.aspx', {
+	var url = buildUrl(processingProgram, {
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue fo the new form to be the same as the origin form unless belongs2Event is set
 		'mode': formMode,
 		'unit_id': null,
 		'key_value': eventLogId,
 		'event_id': eventDefinition,
+		'event_definition_id': eventDefinition,
 		'form_header_id': formHeader,
 		'service_track': serviceTrack,  //This value is coming from the origin form
 		'module_code': 'CLIENTS',
+		'program_info_id': programInfo,
 		'belongs2event': null,
 		'unit': null,
 		'rp': null,
@@ -168,17 +178,27 @@ function click2Add(event){
 	
 	var events2doEventDefinitionId = $(this).data('events2do-event-definition-id');
 	sessionStorage.setItem("events2do_event_definition_id", events2doEventDefinitionId);
+
+	var processingProgram = 'Form.aspx';
+	var programInfo = null;
+	var isServicePlan = $(this).data('is-service-plan');
+	if(isServicePlan){
+		processingProgram = 'ServicePlanForm.aspx';
+		programInfo = $(this).data('program-info-id');
+	}
 	
 	var properties = {windowName: winTitle};
-	var url = buildUrl('Form.aspx', {
+	var url = buildUrl(processingProgram, {
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
 		'mode': 'ADD',
 		'unit_id': null,
 		'key_value': 'new', // This is a new event, so there will be no key_value until save
 		'event_id': eventDefinition,
+		'event_definition_id': eventDefinition,
 		'form_header_id': formHeader,
 		'service_track': serviceTrack,  //This value is coming from the origin form
 		'module_code': 'CLIENTS',
+		'program_info_id': programInfo,
 		'belongs2event': belongs2Event,
 		'unit': null,
 		'rp': null,
