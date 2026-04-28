@@ -241,6 +241,7 @@ function click2Complete(event){
 		'key_value': events2Do,
 		'events2do_id': events2Do,
 		'event_id': eventDefinition,
+		'event_definition_id': eventDefinition,
 		'form_header_id': formHeader,
 		'service_track': serviceTrack,  //This value is coming from the origin form
 		'module_code': 'CLIENTS',
