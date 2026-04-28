@@ -240,7 +240,7 @@ function click2Complete(event){
 		'parent_value': parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
 		'mode': 'ADD',
 		'unit_id': null,
-		'key_value': 'new',
+		//'key_value': 'new',
 		'events2do_id': events2Do,
 		'event_id': eventDefinition,
 		'event_definition_id': eventDefinition,
