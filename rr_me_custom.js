@@ -226,9 +226,15 @@ function click2Complete(event){
 	//Optional HTML Data Attributes
 	var belongs2Event = $(this).data('belongs2event-id');
 	sessionStorage.setItem("belongs_to_event", belongs2Event);	
+
+	var processingProgram = 'Form.aspx';
+	var isServicePlan = $(this).data('is-service-plan');
+	if(isServicePlan){
+		processingProgram = 'ServicePlanForm.aspx'
+	}
 	
 	var properties = {windowName: winTitle};
-	var url = buildUrl('Form.aspx', {
+	var url = buildUrl(processingProgram, {
 		'parent_value': parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
 		'mode': 'ADD',
 		'unit_id': null,
