@@ -208,7 +208,10 @@ function click2Add(event){
 		'caller': 'Listing',
 		'data': 'SERVER',
 		'isCompleteScheduledEvent': false,
-		'winTitle': winTitle
+		'winTitle': winTitle,
+		'workerID': workerID,
+		'sitePS': sitePS,
+		'programPS': programPS
 	});
 	
 	openRadWindowEx(winTitle, url, properties);
