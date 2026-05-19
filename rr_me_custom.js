@@ -189,7 +189,8 @@ function click2Add(event){
 	
 	var properties = {windowName: winTitle};
 	var url = buildUrl(processingProgram, {
-		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
+		// 'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
+		'parent_value': parentValue,
 		'mode': 'ADD',
 		'unit_id': null,
 		'key_value': 'new', // This is a new event, so there will be no key_value until save
