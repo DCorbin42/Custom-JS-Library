@@ -201,6 +201,7 @@ function click2Add(event){
 		'module_code': 'CLIENTS',
 		'program_info_id': programInfo,
 		'belongs2event': belongs2Event,
+		'belongs_to_event': belongs2Event,
 		'unit': null,
 		'rp': null,
 		'is_add_allowed': true,
