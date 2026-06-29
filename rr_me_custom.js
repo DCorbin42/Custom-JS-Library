@@ -111,6 +111,7 @@ function click2Open(event){
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue fo the new form to be the same as the origin form unless belongs2Event is set
 		'mode': formMode,
 		'unit_id': null,
+		'KeyValue': eventLogId,
 		'key_value': eventLogId,
 		'event_id': eventDefinition,
 		'event_definition_id': eventDefinition,
