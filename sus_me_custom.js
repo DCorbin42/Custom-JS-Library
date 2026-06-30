@@ -106,8 +106,11 @@ function click2Open(event){
 		isEditAllowed = true;
 	}
 
-  var onCloseCode = "Form.Refresh()";
-	var properties = {windowName: winTitle};
+    //var onCloseCode = "Form.Refresh()";
+	var properties = {
+		windowName: winTitle,
+		parentWindow: oWin, // Parent window
+	};
 	var url = buildUrl(processingProgram, {
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue fo the new form to be the same as the origin form unless belongs2Event is set
 		'mode': formMode,
@@ -131,7 +134,7 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 	
-	openRadWindowEx(winTitle, url, properties, onCloseCode);
+	openRadWindowEx(winTitle, url, properties);
 }
 
 
@@ -188,8 +191,11 @@ function click2Add(event){
 		programInfo = $(this).data('program-info-id');
 	}
 
-  var onCloseCode = "Form.Refresh()";
-	var properties = {windowName: winTitle};
+    //var onCloseCode = "Form.Refresh()";
+	var properties = {
+		windowName: winTitle,
+		parentWindow: oWin, // Parent window
+	};
 	var url = buildUrl(processingProgram, {
 		// 'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
 		'parent_value': parentValue,
@@ -218,7 +224,7 @@ function click2Add(event){
 		'programPS': programPS
 	});
 	
-	openRadWindowEx(winTitle, url, properties, onCloseCode);
+	openRadWindowEx(winTitle, url, properties);
 }
 
 /*  
