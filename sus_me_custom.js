@@ -132,7 +132,7 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 	
-	openRadWindowEx(winTitle, url, properties, () => console.log(window)); //testing
+	openRadWindowEx(winTitle, url, properties, () => Form.Refresh(), null); //testing
 }
 
 
