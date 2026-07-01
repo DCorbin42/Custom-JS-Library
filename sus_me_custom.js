@@ -132,7 +132,7 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 	
-	openRadWindowEx(winTitle, url, properties, window.location.reload());
+	openRadWindowEx(winTitle, url, properties, () => window.location.reload());
 }
 
 
