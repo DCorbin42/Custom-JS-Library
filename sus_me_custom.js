@@ -109,7 +109,7 @@ function click2Open(event){
     //var onCloseCode = "Form.Refresh()";
 	var properties = {
 		windowName: winTitle,
-		parentWindow: oWin, // Parent window
+		parentWindow: getRadWindow() // Parent window
 	};
 	var url = buildUrl(processingProgram, {
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue fo the new form to be the same as the origin form unless belongs2Event is set
@@ -194,7 +194,7 @@ function click2Add(event){
     //var onCloseCode = "Form.Refresh()";
 	var properties = {
 		windowName: winTitle,
-		parentWindow: oWin, // Parent window
+		parentWindow: getRadWindow() // Parent window
 	};
 	var url = buildUrl(processingProgram, {
 		// 'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
