@@ -106,10 +106,8 @@ function click2Open(event){
 		isEditAllowed = true;
 	}
 
-    //var onCloseCode = "Form.Refresh()";
 	var properties = {
-		windowName: winTitle,
-		parentWindow: getRadWindow() // Parent window
+		windowName: winTitle
 	};
 	var url = buildUrl(processingProgram, {
 		'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue fo the new form to be the same as the origin form unless belongs2Event is set
@@ -134,7 +132,7 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 	
-	openRadWindowEx(winTitle, url, properties);
+	openRadWindowEx(winTitle, url, properties, () => Form.Refresh());
 }
 
 
@@ -191,10 +189,8 @@ function click2Add(event){
 		programInfo = $(this).data('program-info-id');
 	}
 
-    //var onCloseCode = "Form.Refresh()";
 	var properties = {
-		windowName: winTitle,
-		parentWindow: getRadWindow() // Parent window
+		windowName: winTitle
 	};
 	var url = buildUrl(processingProgram, {
 		// 'parent_value': belongs2Event ? belongs2Event : parentValue,  // Sets the parentValue of the new form to be the same as the origin form unless belongs2Event is set
@@ -224,7 +220,7 @@ function click2Add(event){
 		'programPS': programPS
 	});
 	
-	openRadWindowEx(winTitle, url, properties);
+	openRadWindowEx(winTitle, url, properties, () => Form.Refresh());
 }
 
 /*  
