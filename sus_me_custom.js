@@ -131,8 +131,13 @@ function click2Open(event){
 		'isCompleteScheduledEvent': false,
 		'winTitle': winTitle
 	});
-	
-	openRadWindowEx(winTitle, url, properties, () => Form.Refresh(), null); //testing
+
+	var formRefresh = function () {
+	  	Form.Refresh();
+	}
+
+	var win = openRadWindowEx(winTitle, url, properties);
+	win.add_close(formRefresh());
 }
 
 
