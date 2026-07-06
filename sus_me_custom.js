@@ -139,7 +139,7 @@ function click2Open(event){
 	}
 
 	var win = openRadWindowEx(winTitle, url, properties);
-	win.add_close(formRefresh);
+	win.add_close(()=>formRefresh());
 }
 
 
