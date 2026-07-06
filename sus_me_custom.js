@@ -140,8 +140,8 @@ function click2Open(event){
 	}
 
 	var win = openRadWindowEx(winTitle, url, properties);
-	win.add_close(susFormRefresh);
-	//win.add_close(External.Refresh)
+	//win.add_close(susFormRefresh);
+	win.add_close(External.Refresh)
 }
 
 
