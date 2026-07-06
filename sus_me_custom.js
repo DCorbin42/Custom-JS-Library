@@ -132,12 +132,14 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 
-	const formRefresh = function () {
-	  	Form.Refresh();
+	function formRefresh() {
+	  	return function(){
+			Form.Refresh();
+		}
 	}
 
 	var win = openRadWindowEx(winTitle, url, properties);
-	win.add_close((e) => formRefresh(e));
+	win.add_close(formRefresh);
 }
 
 
