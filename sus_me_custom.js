@@ -137,7 +137,7 @@ function click2Open(event){
 	}
 
 	var win = openRadWindowEx(winTitle, url, properties);
-	win.add_close((evt) => formRefresh());
+	win.add_close((e) => formRefresh(e));
 }
 
 
