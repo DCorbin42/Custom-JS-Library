@@ -136,7 +136,7 @@ function click2Open(event){
 		Form.Refresh();
 	}
 
-	var win = openRadWindowEx(winTitle, url, properties);
+	var win = openRadWindow(winTitle, url);
 	win.add_close(susFormRefresh);
 }
 
