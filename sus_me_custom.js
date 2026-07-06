@@ -133,10 +133,7 @@ function click2Open(event){
 	});
 
 	function susFormRefresh(sender, args) {
-		var argument = args.get_argument();
-		if (!Util.isNullOrUndefined(args) && !Util.isNullOrUndefined(args.get_argument())) {
-			Form.Refresh();
-		}
+		Form.Refresh();
 	}
 
 	var win = openRadWindowEx(winTitle, url, properties);
