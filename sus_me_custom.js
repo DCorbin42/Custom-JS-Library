@@ -132,15 +132,27 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 
-	function susFormRefresh(win) {
-		console.log(win);
-		win.Form.Refresh();
-	} 
+	//function susFormRefresh(win) {
+	//	console.log(win);
+	//	win.Form.Refresh();
+	//} 
 
-	var thisWin = getRadWindow();
+	//var thisWin = getRadWindow();
 
 	var win = openRadWindow(winTitle, url);
-	win.add_close(susFormRefresh(thisWin));
+	win.add_close(susRefreshForm = function (sender, args) {
+		sender.remove_close(susRefreshForm);
+
+		var returnArguments, value, text;
+
+		returnArguments = args.get_argument();
+		if (Util.isNullOrUndefined(returnArguments)) {
+			return;
+		}
+
+		value = returnArguments.code_field;
+		Form.Refresh();
+	});
 }
 
 
