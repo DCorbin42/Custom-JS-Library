@@ -133,6 +133,7 @@ function click2Open(event){
 	});
 
 	function susFormRefresh(win) {
+		console.log(win);
 		win.Form.Refresh();
 	} 
 
