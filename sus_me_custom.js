@@ -133,7 +133,7 @@ function click2Open(event){
 	});
 
 	function susFormRefresh(event, args, window) {
-		Form.Refresh(window);
+		event.Form.Refresh();
 	} 
 	var thisWindow = getRadWindow();
 	
