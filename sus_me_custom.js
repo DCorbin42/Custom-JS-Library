@@ -136,7 +136,7 @@ function click2Open(event){
 		console.log(myWindow);
 		myWindow.Form.Refresh();
 	} 
-	var thisWindow = 
+	var thisWindow = getRadWindow();
 	
 	let win = openRadWindowEx(
 		winTitle, 
