@@ -135,7 +135,7 @@ function click2Open(event){
 	function susFormRefresh(event, args, myWindow) {
 		myWindow.Refresh();
 	} 
-	var thisWindow = this.window[15].Form;
+	var thisWindow = Form;
 	
 	let win = openRadWindowEx(
 		winTitle, 
