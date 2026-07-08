@@ -132,27 +132,18 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 
-	//function susFormRefresh(win) {
-	//	console.log(win);
-	//	win.Form.Refresh();
-	//} 
-
-	//var thisWin = getRadWindow();
-
-	var win = openRadWindow(winTitle, url);
-	win.add_close(susRefreshForm = function (sender, args) {
-		sender.remove_close(susRefreshForm);
-
-		var returnArguments, value, text;
-
-		returnArguments = args.get_argument();
-		if (Util.isNullOrUndefined(returnArguments)) {
-			return;
-		}
-
-		value = returnArguments.code_field;
+	function susFormRefresh() {
 		Form.Refresh();
-	});
+	} 
+
+	let win = openRadWindowEx(
+		winTitle, 
+		url,
+		{
+			parentWindow: getRadWindow()
+		}
+	);
+	win.add_close((event, args)=>susRefreshForm(event, args));
 }
 
 
