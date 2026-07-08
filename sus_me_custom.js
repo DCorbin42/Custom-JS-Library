@@ -134,7 +134,8 @@ function click2Open(event){
 
 	function susFormRefresh(event, args, myWindow) {
 		console.log(myWindow);
-		myWindow.Form.Refresh();
+		var contentFrame = myWindow.GetContentFrame()
+		console.log(contentFrame);
 	} 
 	var thisWindow = getRadWindow();
 	
