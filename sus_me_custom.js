@@ -132,14 +132,11 @@ function click2Open(event){
 		'winTitle': winTitle
 	});
 
-	function susFormRefresh(event, args, window) {
-		console.log(event);
-		console.log(args);
-		console.log(window);
-		console.log(Form);
-		event.Form.Refresh();
+	function susFormRefresh(event, args, myWindow) {
+		console.log(myWindow);
+		myWindow.Form.Refresh();
 	} 
-	var thisWindow = getRadWindow();
+	var thisWindow = 
 	
 	let win = openRadWindowEx(
 		winTitle, 
@@ -148,7 +145,7 @@ function click2Open(event){
 			parentWindow: getRadWindow()
 		}
 	);
-	win.add_close((event, args, window)=>susFormRefresh(event, args, thisWindow));
+	win.add_close((event, args, myWindow)=>susFormRefresh(event, args, thisWindow));
 }
 
 
