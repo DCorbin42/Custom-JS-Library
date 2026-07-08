@@ -143,7 +143,7 @@ function click2Open(event){
 			parentWindow: getRadWindow()
 		}
 	);
-	win.add_close((event, args)=>susRefreshForm(event, args));
+	win.add_close((event, args)=>susFormRefresh(event, args));
 }
 
 
