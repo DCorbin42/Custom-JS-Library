@@ -133,7 +133,7 @@ function click2Open(event){
 	});
 
 	function susFormRefresh(event, args, myWindow) {
-		myWindow.Refresh();
+		myWindow.RefreshSubreport('50F910C0-6BC8-4140-B058-534AC1A07D66', '167b2315-6668-4932-abd6-80d381866b2e');
 	} 
 	var thisWindow = Form;
 	
