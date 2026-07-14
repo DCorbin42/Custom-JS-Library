@@ -232,7 +232,19 @@ function click2Add(event){
 		'programPS': programPS
 	});
 	
-	openRadWindowEx(winTitle, url, properties, () => Form.Refresh());
+	function susFormRefresh(event, args, myWindow) {
+		myWindow.RefreshSubreport('50F910C0-6BC8-4140-B058-534AC1A07D66', '167b2315-6668-4932-abd6-80d381866b2e');
+	} 
+	var thisWindow = Form;
+	
+	let win = openRadWindowEx(
+		winTitle, 
+		url,
+		{
+			parentWindow: getRadWindow()
+		}
+	);
+	win.add_close((event, args, myWindow)=>susFormRefresh(event, args, thisWindow));
 }
 
 /*  
