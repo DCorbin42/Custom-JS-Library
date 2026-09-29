@@ -134,6 +134,7 @@ function click2Open(event){
 
 	function susFormRefresh(event, args, myWindow) {
 		myWindow.RefreshSubreport('50F910C0-6BC8-4140-B058-534AC1A07D66', '167b2315-6668-4932-abd6-80d381866b2e');
+		myWindow.RefreshSubreport('7E6F0FB4-0A2B-5CB0-B344-E5AA30BAE577', 'b6da0cc7-7e6d-4d9c-a4b4-c2b63e02f0f3');
 	} 
 	var thisWindow = Form;
 	
@@ -234,6 +235,7 @@ function click2Add(event){
 	
 	function susFormRefresh(event, args, myWindow) {
 		myWindow.RefreshSubreport('50F910C0-6BC8-4140-B058-534AC1A07D66', '167b2315-6668-4932-abd6-80d381866b2e');
+		myWindow.RefreshSubreport('7E6F0FB4-0A2B-5CB0-B344-E5AA30BAE577', 'b6da0cc7-7e6d-4d9c-a4b4-c2b63e02f0f3');
 	} 
 	var thisWindow = Form;
 	
@@ -313,7 +315,20 @@ function click2Complete(event){
 		'winTitle': winTitle
 	});
 	
-	openRadWindowEx(winTitle, url, properties);
+	function susFormRefresh(event, args, myWindow) {
+		myWindow.RefreshSubreport('50F910C0-6BC8-4140-B058-534AC1A07D66', '167b2315-6668-4932-abd6-80d381866b2e');
+		myWindow.RefreshSubreport('7E6F0FB4-0A2B-5CB0-B344-E5AA30BAE577', 'b6da0cc7-7e6d-4d9c-a4b4-c2b63e02f0f3');
+	} 
+	var thisWindow = Form;
+	
+	let win = openRadWindowEx(
+		winTitle, 
+		url,
+		{
+			parentWindow: getRadWindow()
+		}
+	);
+	win.add_close((event, args, myWindow)=>susFormRefresh(event, args, thisWindow));
 }
 
 
